@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public static int Lives = 3;
     public static int Score = 0;
+    
+    
 
     void Start()
     {
@@ -17,8 +20,10 @@ public class GameManager : MonoBehaviour
         Score = 0;
         Time.timeScale = 0;
         CurrentState = GameState.GameIdle;
+       
+
     }
-    
+
     void Update()
     {
         if(CurrentState == GameState.GameIdle && Input.GetKeyDown(KeyCode.Return))
@@ -32,5 +37,9 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        
+
     }
+   
 }
